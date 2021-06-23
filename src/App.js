@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Apples from './Apples.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    apples: [
+      {id: 1, src: './apple.png'},
+      {id: 2, src: './apple.png'},
+    ]
+  }
+  randomApple = () => {
+    let index = Math.floor(Math.random() * 10);  // create a random index for apple array
+    console.log(index);
+  } 
+  render() {
+    return (
+      <div className="App">
+        <h1 className="center blue-text">Todos</h1>
+        <Apples apples={this.state.apples} />
+        <button onClick={this.randomApple}>Shake the tree!</button>
+      </div>
+    );
+  }
 }
 
 export default App;
