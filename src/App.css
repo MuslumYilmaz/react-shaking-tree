@@ -12,6 +12,7 @@
   position: relative;
   bottom: 0;
   animation-name: drop;
+  animation-fill-mode: forwards;
   animation-duration: 4s;
 }
 

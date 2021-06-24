@@ -7,6 +7,11 @@ class App extends Component {
     apples: [
       {id: 0, src: './apple.png', class: "apple"},
       {id: 1, src: './apple.png', class: "apple"},
+      {id: 2, src: './apple.png', class: "apple"},
+      {id: 3, src: './apple.png', class: "apple"},
+      {id: 4, src: './apple.png', class: "apple"},
+      {id: 5, src: './apple.png', class: "apple"},
+      {id: 6, src: './apple.png', class: "apple"}
     ]
   }
   randomApple = () => {
@@ -32,14 +37,21 @@ class App extends Component {
   }
 
   test = () => {
-    let index = Math.floor(Math.random() * 2);  // create a random index for apple array
+    // generate a random number less than array index so dropped appples will differ each time we run the function
+    let count =  Math.floor(Math.random() * 5) + 1; // add +1 so dropped apple number will be always more than one
     let apples = [...this.state.apples];
 
-    apples.forEach(el => {
-      if (el.id === index) {
-        el.class = "apple-drop"
+      while (count <= apples.length) {
+        let index = Math.floor(Math.random() * 6); // create a random index for apple array
+        apples.forEach(el => {
+          if (el.id === index) {
+            el.class = "apple-drop";
+            count += 1;
+            console.log(el);
+          }
+        })
       }
-    })
+
 
     this.setState({
       apples  
