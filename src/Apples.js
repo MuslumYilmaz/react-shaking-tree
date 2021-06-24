@@ -5,8 +5,8 @@ const Apples = ({apples}) => {
 
     const appleList =  apples.map(apple => {
             return(
-                <div className="collection-item" key={apple.id}>
-                    <img src={appleImage} alt="Apple" />
+                <div className="" key={apple.id}>
+                    <img src={appleImage} alt="Apple" className={apple.class} />
                 </div>
             )
         })

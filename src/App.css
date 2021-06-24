@@ -28,6 +28,31 @@
   color: #61dafb;
 }
 
+.apple {
+  position: relative;
+  bottom: 0;
+  animation-duration: 4s;
+}
+
+.apple-drop {
+  position: relative;
+  bottom: 0;
+  animation-name: drop;
+  animation-duration: 4s;
+}
+
+@keyframes drop {
+  from {
+    position: relative;
+    bottom: 0;
+  }
+  to {
+    position: relative;
+    bottom: -100px;
+  }
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
