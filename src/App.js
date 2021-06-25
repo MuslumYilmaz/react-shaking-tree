@@ -4,7 +4,6 @@ import Apples from './Apples.js';
 import Basket from './Basket.js';
 
 class App extends Component {
-  appleCount = 0;
   state = {
     apples: [
       {id: 0, src: './apple.png', class: "apple"},
@@ -14,7 +13,8 @@ class App extends Component {
       {id: 4, src: './apple.png', class: "apple"},
       {id: 5, src: './apple.png', class: "apple"}
     ],
-    appleClass: "apples"
+    appleClass: "apples",
+    appleCount: 0
   }
 
   dropApple = () => {
@@ -43,8 +43,14 @@ class App extends Component {
     this.appleCount = uniqueArray.length;
 
     this.setState({
-      apples  
-    })
+      apples,
+    });
+
+    setTimeout(() => {
+      this.setState({
+        appleCount: uniqueArray.length 
+      });
+    }, 1000)
   }
 
   changeClass = () => {
@@ -67,7 +73,7 @@ class App extends Component {
         {/* <button className="shake-button" onClick={this.dropApple}>Shake the tree!</button> */}
         <button className="shake-button" onClick={this.shake}>Shake the tree!</button>
         <Apples shakeClass={this.state.appleClass} apples={this.state.apples} />
-        <Basket appleCount={this.appleCount} />
+        <Basket appleCount={this.state.appleCount} />
       </div>
     );
   }
