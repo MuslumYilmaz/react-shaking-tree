@@ -5,7 +5,6 @@ import Basket from './Basket.js';
 
 class App extends Component {
   appleCount = 0;
-  appleClass = "apples"
   state = {
     apples: [
       {id: 0, src: './apple.png', class: "apple"},
@@ -14,7 +13,8 @@ class App extends Component {
       {id: 3, src: './apple.png', class: "apple"},
       {id: 4, src: './apple.png', class: "apple"},
       {id: 5, src: './apple.png', class: "apple"}
-    ]
+    ],
+    appleClass: "apples"
   }
 
   dropApple = () => {
@@ -40,9 +40,7 @@ class App extends Component {
         return arr.indexOf(item) === pos;
     })
 
-    console.log(uniqueArray);
     this.appleCount = uniqueArray.length;
-    console.log(this.appleCount);
 
     this.setState({
       apples  
@@ -54,7 +52,9 @@ class App extends Component {
   }
 
   shake = () => {
-    this.appleClass = "shake-apples";
+    this.setState({
+      appleClass: "shake-apples"
+    })
 
     setTimeout(() => {
       this.dropApple();
@@ -66,7 +66,7 @@ class App extends Component {
       <div className="App">
         {/* <button className="shake-button" onClick={this.dropApple}>Shake the tree!</button> */}
         <button className="shake-button" onClick={this.shake}>Shake the tree!</button>
-        <Apples shakeClass={this.appleClass} apples={this.state.apples} />
+        <Apples shakeClass={this.state.appleClass} apples={this.state.apples} />
         <Basket appleCount={this.appleCount} />
       </div>
     );
