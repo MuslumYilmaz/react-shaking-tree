@@ -12,18 +12,17 @@ class App extends Component {
       {id: 2, src: './apple.png', class: "apple"},
       {id: 3, src: './apple.png', class: "apple"},
       {id: 4, src: './apple.png', class: "apple"},
-      {id: 5, src: './apple.png', class: "apple"},
-      {id: 6, src: './apple.png', class: "apple"}
+      {id: 5, src: './apple.png', class: "apple"}
     ]
   }
 
   dropApple = () => {
     // generate a random number less than array index so dropped appples will differ each time we run the function
-    let count =  Math.floor(Math.random() * 5) + 1; // add +1 so dropped apple number will be always more than one
+    let count =  Math.floor(Math.random() * 4) + 1; // add +1 so dropped apple number will be always more than one
     let apples = [...this.state.apples];
     let arr = [];
       while (count <= apples.length) {
-        let index = Math.floor(Math.random() * 6); // create a random index for apple array
+        let index = Math.floor(Math.random() * 5); // create a random index for apple array
 
         apples.forEach(el => {
           if (el.id === index) {
@@ -52,10 +51,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="center blue-text">Todos</h1>
+        <button className="shake-button" onClick={this.dropApple}>Shake the tree!</button>
         <Apples apples={this.state.apples} />
-        <button onClick={this.randomApple}>Shake the tree!</button>
-        <button onClick={this.dropApple}>Counter</button>
         <Basket appleCount={this.appleCount} />
       </div>
     );

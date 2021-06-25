@@ -5,13 +5,13 @@ const Apples = ({apples}) => {
 
     const appleList =  apples.map(apple => {
             return(
-                <div className="" key={apple.id}>
-                    <img src={appleImage} alt="Apple" className={apple.class} />
+                <div key={apple.id}>
+                    <img src={appleImage} alt="Apple" width="50px" className={apple.class} />
                 </div>
             )
         })
     return(
-        <div className="apples collection">
+        <div className="apples">
             {appleList}
         </div>
     )
