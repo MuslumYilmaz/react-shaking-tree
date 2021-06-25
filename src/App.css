@@ -4,10 +4,8 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  gap: 50px;
   width:  100vw;
   height: 100vh;
-  margin: 0 auto;
 }
 
 .basket {
@@ -15,7 +13,6 @@
   background-size: 20%;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-bottom: 20px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -23,7 +20,6 @@
 }
 
 .shake-button {
-  margin:  5px auto;
   width: 200px;
   height: 80px;
   background: transparent;
@@ -50,10 +46,12 @@ button:focus {
   background-image: url('./tree.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; 
+  background-position: center center;
   display: grid;
   grid-template-columns: 40% 20% 40%;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 40% 20%;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 
@@ -64,7 +62,9 @@ button:focus {
   background-position: center center; 
   display: grid;
   grid-template-columns: 40% 20% 40%;
-  grid-template-rows: 40% 60%;
+  grid-template-rows: 40% 20%;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   animation: shake 3s forwards; 
 }
@@ -92,14 +92,9 @@ button:focus {
 }
 
 .apple {
-  position: relative;
-  bottom: 0;
-  animation-duration: 4s;
 }
 
 .apple-drop {
-  position: relative;
-  bottom: 0;
   animation-name: drop;
   animation-fill-mode: forwards;
   animation-duration: 4s;
