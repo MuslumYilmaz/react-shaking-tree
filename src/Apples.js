@@ -1,7 +1,7 @@
 import React from 'react';
 import appleImage from './apple.png';
 
-const Apples = ({apples}) => {
+const Apples = ({apples, shakeClass}) => {
 
     const appleList =  apples.map(apple => {
             return(
@@ -11,7 +11,7 @@ const Apples = ({apples}) => {
             )
         })
     return(
-        <div className="apples">
+        <div className={shakeClass}>
             {appleList}
         </div>
     )

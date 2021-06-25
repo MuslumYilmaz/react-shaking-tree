@@ -5,6 +5,7 @@ import Basket from './Basket.js';
 
 class App extends Component {
   appleCount = 0;
+  appleClass = "apples"
   state = {
     apples: [
       {id: 0, src: './apple.png', class: "apple"},
@@ -48,11 +49,24 @@ class App extends Component {
     })
   }
 
+  changeClass = () => {
+    
+  }
+
+  shake = () => {
+    this.appleClass = "shake-apples";
+
+    setTimeout(() => {
+      this.dropApple();
+    }, 3000);
+  }
+
   render() {
     return (
       <div className="App">
-        <button className="shake-button" onClick={this.dropApple}>Shake the tree!</button>
-        <Apples apples={this.state.apples} />
+        {/* <button className="shake-button" onClick={this.dropApple}>Shake the tree!</button> */}
+        <button className="shake-button" onClick={this.shake}>Shake the tree!</button>
+        <Apples shakeClass={this.appleClass} apples={this.state.apples} />
         <Basket appleCount={this.appleCount} />
       </div>
     );
