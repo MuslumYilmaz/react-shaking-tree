@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
 import Apples from './Apples.js';
+import Basket from './Basket.js';
 
 class App extends Component {
+  appleCount = 0;
   state = {
     apples: [
       {id: 0, src: './apple.png', class: "apple"},
@@ -38,7 +40,9 @@ class App extends Component {
         return arr.indexOf(item) === pos;
     })
 
-      console.log(uniqueArray);
+    console.log(uniqueArray);
+    this.appleCount = uniqueArray.length;
+    console.log(this.appleCount);
 
     this.setState({
       apples  
@@ -52,6 +56,7 @@ class App extends Component {
         <Apples apples={this.state.apples} />
         <button onClick={this.randomApple}>Shake the tree!</button>
         <button onClick={this.dropApple}>Counter</button>
+        <Basket appleCount={this.appleCount} />
       </div>
     );
   }
