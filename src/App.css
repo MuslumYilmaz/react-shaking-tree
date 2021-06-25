@@ -10,7 +10,15 @@
 }
 
 .basket {
-  background-color: red !important;
+  background-image: url('./basket.png');
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 20px;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shake-button {
@@ -106,4 +114,11 @@ button:focus {
     bottom: -600px;
     height: 0;
   }
+}
+
+.apple-count {
+  color: lime;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 48px;
 }

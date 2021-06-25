@@ -53,10 +53,6 @@ class App extends Component {
     }, 1000)
   }
 
-  changeClass = () => {
-    
-  }
-
   shake = () => {
     this.setState({
       appleClass: "shake-apples"
