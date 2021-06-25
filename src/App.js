@@ -66,10 +66,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <button className="shake-button" onClick={this.dropApple}>Shake the tree!</button> */}
+        <div className="first-group">
         <button className="shake-button" onClick={this.shake}>Shake the tree!</button>
-        <Apples shakeClass={this.state.appleClass} apples={this.state.apples} />
         <Basket appleCount={this.state.appleCount} />
+        </div>
+        <div className="second-group">
+        <Apples shakeClass={this.state.appleClass} apples={this.state.apples} />
+        </div>
+
       </div>
     );
   }
