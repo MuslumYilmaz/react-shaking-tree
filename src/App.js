@@ -22,35 +22,56 @@ class App extends Component {
     let count =  Math.floor(Math.random() * 4) + 1; // add +1 so dropped apple number will be always more than one
     let apples = [...this.state.apples];
     let arr = [];
-      while (count <= apples.length) {
-        let index = Math.floor(Math.random() * 5); // create a random index for apple array
 
-        apples.forEach(el => {
-          if (el.id === index) {
-            el.class = "apple-drop";
-            console.log(el);
-            arr.push(el);
-          }
-        })
-        count++;
-      }
+        const interval = setInterval(() => {
+          if (count <= apples.length) {
+            let index = Math.floor(Math.random() * 5); // create a random index for apple array
 
-      // remove duplicates from dropped apples
-      let uniqueArray = arr.filter(function(item, pos) {
-        return arr.indexOf(item) === pos;
-    })
+            apples[index].class = "apple-drop";
+            arr.push(apples[index]);
+            count++;
+            console.log(apples[index]);
+            
+            // set state after each apple dropped
+            this.setState({
+              apples
+            });
 
-    this.appleCount = uniqueArray.length;
+            // remove duplicates from dropped apples
+            let uniqueArray = arr.filter(function(item, pos) {
+            return arr.indexOf(item) === pos;
+            });
 
-    this.setState({
-      apples,
-    });
+            this.appleCount = uniqueArray.length;
 
-    setTimeout(() => {
-      this.setState({
-        appleCount: uniqueArray.length 
-      });
-    }, 1000)
+            this.setState({
+              appleCount: uniqueArray.length 
+            });
+            } else {
+            clearInterval(interval);
+            }
+            }, 1000);
+
+        // apples.forEach(el => {
+        //   if (el.id === index) {
+        //     el.class = "apple-drop";
+        //     console.log(el);
+        //     arr.push(el);
+        //   }
+        // })
+        // count++;
+
+
+
+    // this.setState({
+    //   apples
+    // });
+
+    // setTimeout(() => {
+    //   this.setState({
+    //     appleCount: uniqueArray.length 
+    //   });
+    // }, 1000)
   }
 
   shake = () => {
