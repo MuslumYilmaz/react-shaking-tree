@@ -50,10 +50,12 @@ class App extends Component {
   }
 
   shake = () => {
+    // set shake-tree class
     this.setState({
       appleClass: "shake-tree"
     })
 
+    // drop apples after 3 seconds
     setTimeout(() => {
       this.dropApple();
     }, 3000);
