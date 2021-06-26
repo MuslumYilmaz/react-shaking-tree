@@ -1,0 +1,17 @@
+.basket {
+    background-image: url('./basket.png');
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.apple-count {
+    color: lime;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+  }

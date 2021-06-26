@@ -6,12 +6,12 @@ import Basket from './Basket.js';
 class App extends Component {
   state = {
     apples: [
-      {id: 0, src: './apple.png', class: "apple"},
-      {id: 1, src: './apple.png', class: "apple"},
-      {id: 2, src: './apple.png', class: "apple"},
-      {id: 3, src: './apple.png', class: "apple"},
-      {id: 4, src: './apple.png', class: "apple"},
-      {id: 5, src: './apple.png', class: "apple"}
+      {id: 0, src: './apple.png', class: ""},
+      {id: 1, src: './apple.png', class: ""},
+      {id: 2, src: './apple.png', class: ""},
+      {id: 3, src: './apple.png', class: ""},
+      {id: 4, src: './apple.png', class: ""},
+      {id: 5, src: './apple.png', class: ""}
     ],
     appleClass: "apples",
     appleCount: 0
@@ -51,7 +51,7 @@ class App extends Component {
 
   shake = () => {
     this.setState({
-      appleClass: "shake-apples"
+      appleClass: "shake-tree"
     })
 
     setTimeout(() => {

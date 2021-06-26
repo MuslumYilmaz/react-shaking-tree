@@ -1,4 +1,5 @@
 import React from 'react';
+import './Apples.css';
 import appleImage from './apple.png';
 
 const Apples = ({apples, shakeClass}) => {

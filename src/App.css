@@ -8,17 +8,6 @@
   height: 100vh;
 }
 
-.basket {
-  background-image: url('./basket.png');
-  background-size: 20%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .shake-button {
   width: 200px;
   height: 80px;
@@ -40,83 +29,6 @@
 button:focus {
   outline: none;
   background: none;
-}
-
-.apples {
-  background-image: url('./tree.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  display: grid;
-  grid-template-columns: 40% 20% 40%;
-  grid-template-rows: 40% 20%;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.shake-apples {
-  background-image: url('./tree.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; 
-  display: grid;
-  grid-template-columns: 40% 20% 40%;
-  grid-template-rows: 40% 20%;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  animation: shake 3s forwards; 
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-
-  25% {
-    transform: translate(2px,2px) rotate(2deg);
-  }
-
-  50% {
-    transform: translate(-2px, -2px) rotate(-2deg);
-  }
-
-  75% {
-    transform: translate(4px, -2px) rotate(4deg);
-  }
-
-  100% {
-    transform: translate(0px, 0px) rotate(0deg);
-  }
-}
-
-.apple {
-}
-
-.apple-drop {
-  animation-name: drop;
-  animation-fill-mode: forwards;
-  animation-duration: 4s;
-}
-
-@keyframes drop {
-  0% {
-    position: relative;
-    bottom: 0;
-  }
-  100% {
-    position: relative;
-    bottom: -600px;
-    height: 0;
-  }
-}
-
-.apple-count {
-  color: lime;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  font-size: 48px;
 }
 
 .first-group {
