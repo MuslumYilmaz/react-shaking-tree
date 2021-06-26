@@ -38,11 +38,7 @@ class App extends Component {
             });
 
             // remove duplicates from dropped apples
-            let uniqueArray = arr.filter(function(item, pos) {
-            return arr.indexOf(item) === pos;
-            });
-
-            this.appleCount = uniqueArray.length;
+            let uniqueArray = arr.filter((item, pos) => arr.indexOf(item) === pos);
 
             this.setState({
               appleCount: uniqueArray.length 
@@ -51,27 +47,6 @@ class App extends Component {
             clearInterval(interval);
             }
             }, 1000);
-
-        // apples.forEach(el => {
-        //   if (el.id === index) {
-        //     el.class = "apple-drop";
-        //     console.log(el);
-        //     arr.push(el);
-        //   }
-        // })
-        // count++;
-
-
-
-    // this.setState({
-    //   apples
-    // });
-
-    // setTimeout(() => {
-    //   this.setState({
-    //     appleCount: uniqueArray.length 
-    //   });
-    // }, 1000)
   }
 
   shake = () => {
